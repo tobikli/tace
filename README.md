@@ -1,16 +1,46 @@
-# tace
+![Logo](https://github.com/tobikli/tace/blob/master/assets/banner.png)
 
-A new Flutter project.
+# Tace
 
-## Getting Started
+Flutter based Multiplatform App for Life Management and as personal Dashboard
 
-This project is a starting point for a Flutter application.
+## Demo
 
-A few resources to get you started if this is your first Flutter project:
+https://tobikli.github.io/tace
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Badges
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
+
+![Build](https://img.shields.io/appveyor/build/tobikli/tace)
+
+## Build Locally
+
+Assuming Flutter is already installed and configured
+https://docs.flutter.dev/get-started/install
+
+Clone the project
+
+```bash
+  git clone https://github.com/tobikli/tace.git
+```
+
+Go to the project directory
+
+```bash
+  cd tace
+```
+
+Build project
+
+```bash
+  flutter run {ios, android, macos, windows, web} --release
+```
+
+## Authors
+
+- [@tobikli](https://github.com/tobikli)
+
+## Support
+
+For support, email tobikli@pm.me.
