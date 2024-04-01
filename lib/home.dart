@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:tace/favorites.dart';
 import 'appState.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var appState = MyAppState();
     final theme = Theme.of(context);
     var usrname = SharedPreferencesHelper.instance.prefs.getString('name');
 
@@ -15,14 +12,14 @@ class HomePage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          TextBox(title: "tace"),
+          Text("TACE", style: TextStyle(color: Colors.black, fontFamily: "Demode", fontSize: 30),),
           Divider(
             color: theme.colorScheme.secondary,
             indent: 15,
             endIndent: 15,
           ),
           SizedBox(height: 10),
-          Text("Welcome back $usrname", style: TextStyle(color: theme.colorScheme.secondary, fontSize: 20)),
+          Text("Welcome back $usrname!", style: TextStyle(color: theme.colorScheme.secondary, fontSize: 20)),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [

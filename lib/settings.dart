@@ -1,11 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tace/login.dart';
-import 'package:tace/main.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 import 'appState.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class SettingsPage extends StatelessWidget {
   @override
@@ -14,10 +11,6 @@ class SettingsPage extends StatelessWidget {
     final style1 = theme.textTheme.headlineSmall!.copyWith(
       color: theme.colorScheme.onPrimary,
     );
-    final style2 = theme.textTheme.labelSmall!.copyWith(
-      color: theme.colorScheme.onPrimary,
-    );
-    var appState = MyAppState();
 
     return Theme(
       data: theme,

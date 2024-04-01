@@ -1,8 +1,4 @@
-import 'package:flutter/widgets.dart';
-
-import 'appState.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class FavoritesPage extends StatefulWidget {
   @override
@@ -16,9 +12,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
     final style1 = theme.textTheme.headlineSmall!.copyWith(
       color: theme.colorScheme.onPrimary,
     );
-    final style2 = theme.textTheme.labelSmall!.copyWith(
-      color: theme.colorScheme.onPrimary,
-    );
+
 
 
     return Column(

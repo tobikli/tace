@@ -31,18 +31,24 @@ dev_dependencies:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/logo.png"
+  image_path: "assets/icon.png"
+  web:
+    generate: true
+    image_path: "assets/icon.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  macos:
+    generate: true
+    image_path: "assets/icon.png"
 
 
 flutter:
   uses-material-design: true
-
+  fonts:
+    - family: Demode
+      fonts:
+        - asset: assets/fonts/Demode.ttf
   assets:
     - assets/animated-icons.riv
 
-fonts:
-    - family: Uni-Sans
-      fonts:
-        - asset: assets/fonts/uni-sans/Uni Sans Heavy Italic.otf
-          style: italic
-        - asset: assets/fonts/uni-sans/Uni Sans Heavy.otf
+

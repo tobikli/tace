@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:rive/rive.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tace/login.dart';
 import 'package:tace/models/nav_item_model.dart';
 import 'home.dart';
@@ -10,8 +8,6 @@ import 'favorites.dart';
 import 'search.dart';
 import 'appState.dart';
 import 'settings.dart';
-import 'login.dart';
-import 'package:tace/globals.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 
 const Color bottomNavBgColor = Color.fromARGB(255, 0, 0, 0);
@@ -151,8 +147,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 boxShadow: [
                   BoxShadow(
                       color: bottomNavBgColor.withOpacity(0.3),
-                      offset: Offset(0, 20),
-                      blurRadius: 20),
+                      //offset: Offset(0, 20),
+                      //blurRadius: 20
+                      ),
                 ]),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

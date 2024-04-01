@@ -1,6 +1,4 @@
-import 'appState.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class SearchPage extends StatelessWidget {
   @override
@@ -9,10 +7,6 @@ class SearchPage extends StatelessWidget {
     final style1 = theme.textTheme.headlineSmall!.copyWith(
       color: theme.colorScheme.onPrimary,
     );
-    final style2 = theme.textTheme.labelSmall!.copyWith(
-      color: theme.colorScheme.onPrimary,
-    );
-    var appState = MyAppState();
 
 
     return Column(

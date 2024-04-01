@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:tace/home.dart';
 import 'package:tace/main.dart';
 import 'appState.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:restart_app/restart_app.dart';
-import 'dart:convert';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -85,7 +80,15 @@ class _MyLoginPageState extends State<LoginPage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        TextBox(title: "Welcome to Tace"),
+                        RichText(
+                          text: TextSpan(
+                            style: TextStyle(color: Colors.black, fontSize: 30),
+                            children: [
+                              TextSpan(text: "Welcome to "),
+                              TextSpan(text: "TACE", style: TextStyle(fontFamily: "Demode", fontSize: 35))
+                            ]
+                          ),
+                        ),
                         Padding(
                           padding:
                               EdgeInsets.symmetric(horizontal: 8, vertical: 16),

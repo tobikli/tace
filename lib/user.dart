@@ -1,9 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
-import 'appState.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 
 class UserPage extends StatefulWidget {
@@ -42,10 +38,7 @@ class _UserPageState extends State<UserPage> {
     final style1 = theme.textTheme.headlineSmall!.copyWith(
       color: theme.colorScheme.onPrimary,
     );
-    final style2 = theme.textTheme.labelSmall!.copyWith(
-      color: theme.colorScheme.onPrimary,
-    );
-    var appState = MyAppState();
+
 
     return Theme(
       data: theme,
@@ -56,7 +49,7 @@ class _UserPageState extends State<UserPage> {
                 Column(mainAxisAlignment: MainAxisAlignment.start, children: [
               Text("Account", style: style1),
               Padding(padding: EdgeInsets.all(20)),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 120,
                 child: Card(
