@@ -1,4 +1,5 @@
-![Logo](https://github.com/tobikli/tace/blob/master/assets/banner.png)
+<img src="https://github.com/tobikli/tace/blob/master/assets/banner.png" alt="logo" width="400"/>
+
 
 # Tace
 
