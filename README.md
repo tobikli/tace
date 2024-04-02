@@ -35,6 +35,14 @@ Go to the project directory
 Build project
 
 ```bash
+  flutter build {ios, android, macos, windows, web}
+```
+
+or
+
+Run Project
+
+```bash
   flutter run {ios, android, macos, windows, web} --release
 ```
 
