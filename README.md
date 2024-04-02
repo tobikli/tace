@@ -38,6 +38,14 @@ Build project
   flutter build {ios, android, macos, windows, web}
 ```
 
+or
+
+Run Project
+
+```bash
+  flutter run {ios, android, macos, windows, web} --release
+```
+
 ## Authors
 
 - [@tobikli](https://github.com/tobikli)
