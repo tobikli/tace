@@ -18,9 +18,8 @@ void main() async {
   const keyApplicationId = 'jY8zXQ8orJBWlw3ge5aOZsbpxBy6fUQ708wgmJXx';
   const keyClientKey = 'XQAeVe0upguJmVpRv2l8jY4GFV9pGn2FQKkx3upT';
   const keyParseServerUrl = 'https://parseapi.back4app.com';
-    await Parse().initialize(keyApplicationId, keyParseServerUrl,
+  await Parse().initialize(keyApplicationId, keyParseServerUrl,
       clientKey: keyClientKey, autoSendSessionId: true);
-
 
   runApp(MyApp());
 }
@@ -31,36 +30,41 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Tace',
-                  theme: ThemeData(
-                    elevatedButtonTheme: ElevatedButtonThemeData(
-                      style: ButtonStyle(
-                      )
-                    ),
-                    useMaterial3: true,
-                    colorScheme: ColorScheme.dark(
-                        primary: Color.fromARGB(255, 255, 255, 255),
-                        secondary: Color.fromARGB(255, 0, 0, 0)),
-                        scaffoldBackgroundColor: Colors.white,
-                  ),
-      home: FutureBuilder<bool>(
-     future: SharedPreferencesHelper.instance.hasUserLogged(),
-     builder: (buildContext, snapshot) {
-       if(snapshot.hasData) {
-         if(snapshot.data == false){
-           // Return your login here
-        return LoginPage();
-      }
+        title: 'Tace',
+        theme: ThemeData(
+          elevatedButtonTheme: ElevatedButtonThemeData(style: ButtonStyle()),
+          useMaterial3: true,
+          colorScheme: ColorScheme(
+            brightness: Brightness.dark,
+            primary: Colors.white,
+            onPrimary: Colors.black,
+            secondary: Colors.black,
+            onSecondary: Colors.black,
+            error: Colors.red,
+            onError: Colors.black,
+            background: Colors.white,
+            onBackground: Colors.black,
+            surface: Colors.black,
+            onSurface: Colors.black,
+          ),
+        ),
+        home: FutureBuilder<bool>(
+          future: SharedPreferencesHelper.instance.hasUserLogged(),
+          builder: (buildContext, snapshot) {
+            if (snapshot.hasData) {
+              if (snapshot.data == false) {
+                // Return your login here
+                return LoginPage();
+              }
 
-      // Return your home here
-      return MyHomePage();
-    } else {
-
-      // Return loading screen while reading preferences
-      return Center(child: CircularProgressIndicator());
-    }
-  },
-));
+              // Return your home here
+              return MyHomePage();
+            } else {
+              // Return loading screen while reading preferences
+              return Center(child: CircularProgressIndicator());
+            }
+          },
+        ));
   }
 }
 
@@ -146,10 +150,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderRadius: BorderRadius.all(Radius.circular(24)),
                 boxShadow: [
                   BoxShadow(
-                      color: bottomNavBgColor.withOpacity(0.3),
-                      //offset: Offset(0, 20),
-                      //blurRadius: 20
-                      ),
+                    color: bottomNavBgColor.withOpacity(0.3),
+                    //offset: Offset(0, 20),
+                    //blurRadius: 20
+                  ),
                 ]),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

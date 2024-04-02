@@ -71,7 +71,19 @@ class _MyLoginPageState extends State<LoginPage> {
                   child: Theme(
                     data: ThemeData(
                         useMaterial3: true,
-                        colorScheme: ColorScheme.light(),
+                        colorScheme: ColorScheme(
+                          brightness: Brightness.dark,
+                          primary: Colors.white,
+                          onPrimary: Colors.black,
+                          secondary: Colors.black,
+                          onSecondary: Colors.black,
+                          error: Colors.red,
+                          onError: Colors.black,
+                          background: Colors.white,
+                          onBackground: Colors.black,
+                          surface: Colors.black,
+                          onSurface: Colors.black,
+                        ),
                         inputDecorationTheme: InputDecorationTheme(
                           labelStyle: TextStyle(color: Colors.black),
                           fillColor: Colors.black,
@@ -82,12 +94,15 @@ class _MyLoginPageState extends State<LoginPage> {
                       children: <Widget>[
                         RichText(
                           text: TextSpan(
-                            style: TextStyle(color: Colors.black, fontSize: 30),
-                            children: [
-                              TextSpan(text: "Welcome to "),
-                              TextSpan(text: "TACE", style: TextStyle(fontFamily: "Demode", fontSize: 35))
-                            ]
-                          ),
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 30),
+                              children: [
+                                TextSpan(text: "Welcome to "),
+                                TextSpan(
+                                    text: "TACE",
+                                    style: TextStyle(
+                                        fontFamily: "Demode", fontSize: 35))
+                              ]),
                         ),
                         Padding(
                           padding:
@@ -182,18 +197,16 @@ class _MyLoginPageState extends State<LoginPage> {
                         TextButton(
                             style: ButtonStyle(
                               backgroundColor:
-                                MaterialStateProperty.resolveWith<Color>(
-                                    (Set<MaterialState> states) {
-                              if (states.contains(MaterialState.pressed)) {
-                                return Colors
-                                    .white; 
-                              }
-                              return Colors.white;
-                            }),
-                            overlayColor: MaterialStateProperty.all<Color>(Colors.white),
-                            )
-                            ,
-                            
+                                  MaterialStateProperty.resolveWith<Color>(
+                                      (Set<MaterialState> states) {
+                                if (states.contains(MaterialState.pressed)) {
+                                  return Colors.white;
+                                }
+                                return Colors.white;
+                              }),
+                              overlayColor: MaterialStateProperty.all<Color>(
+                                  Colors.white),
+                            ),
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => forgotPage()));
@@ -281,7 +294,19 @@ class _RegisterPageState extends State<RegisterPage> {
                   child: Theme(
                     data: ThemeData(
                         useMaterial3: true,
-                        colorScheme: ColorScheme.light(),
+                        colorScheme: ColorScheme(
+                          brightness: Brightness.dark,
+                          primary: Colors.white,
+                          onPrimary: Colors.black,
+                          secondary: Colors.black,
+                          onSecondary: Colors.black,
+                          error: Colors.red,
+                          onError: Colors.black,
+                          background: Colors.white,
+                          onBackground: Colors.black,
+                          surface: Colors.black,
+                          onSurface: Colors.black,
+                        ),
                         inputDecorationTheme: InputDecorationTheme(
                           labelStyle: TextStyle(color: Colors.black),
                           fillColor: Colors.black,
@@ -467,7 +492,19 @@ class _forgotPageState extends State<forgotPage> {
                   child: Theme(
                     data: ThemeData(
                         useMaterial3: true,
-                        colorScheme: ColorScheme.light(),
+                        colorScheme: ColorScheme(
+                          brightness: Brightness.dark,
+                          primary: Colors.white,
+                          onPrimary: Colors.black,
+                          secondary: Colors.black,
+                          onSecondary: Colors.black,
+                          error: Colors.red,
+                          onError: Colors.black,
+                          background: Colors.white,
+                          onBackground: Colors.black,
+                          surface: Colors.black,
+                          onSurface: Colors.black,
+                        ),
                         inputDecorationTheme: InputDecorationTheme(
                           labelStyle: TextStyle(color: Colors.black),
                           fillColor: Colors.black,
