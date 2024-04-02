@@ -1,6 +1,30 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
 class globals{
   
-  var firstTime = true;
+  var version = "0.0.2";
+
+
+
+  void showAlertDialog(BuildContext context, String msg, String title) {
+    showCupertinoModalPopup<void>(
+      context: context,
+      builder: (BuildContext context) => CupertinoAlertDialog(
+        title: Text(title),
+        content: Text(msg),
+        actions: <CupertinoDialogAction>[
+          CupertinoDialogAction(
+            isDefaultAction: true,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text('Ok'),
+          ),
+        ],
+      ),
+    );
+  }
 
 }
 

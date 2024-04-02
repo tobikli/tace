@@ -3,6 +3,7 @@ import 'package:tace/login.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 import 'appState.dart';
 import 'package:flutter/material.dart';
+import 'globals.dart';
 
 class SettingsPage extends StatelessWidget {
   @override
@@ -11,6 +12,7 @@ class SettingsPage extends StatelessWidget {
     final style1 = theme.textTheme.headlineSmall!.copyWith(
       color: theme.colorScheme.onPrimary,
     );
+    final version = globals().version;
 
     return Theme(
       data: theme,
@@ -27,7 +29,17 @@ class SettingsPage extends StatelessWidget {
                   child: ListView(
                     children: [Align(
                       alignment: Alignment.center,
-                      child: LogoutButton(),
+                      child: Column(
+                        children: [
+                          LogoutButton(),
+                          SizedBox(height: 20),
+                          ElevatedButton(
+                            onPressed: null, 
+                          child: Text("Delete Account")), 
+                          SizedBox(height: 20),
+                          Text("version: $version"),
+                        ],
+                      )
                     ),
                     ]
                   ),

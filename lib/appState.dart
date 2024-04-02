@@ -33,6 +33,7 @@ class SharedPreferencesHelper {
     return prefs.getString('name') ?? "";
   }
 
+
   Future<bool> hasUserLogged() async {
     ParseUser? currentUser = await ParseUser.currentUser() as ParseUser?;
     if (currentUser == null) {

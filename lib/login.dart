@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tace/home.dart';
 import 'package:tace/main.dart';
 import 'appState.dart';
@@ -54,6 +55,12 @@ class _MyLoginPageState extends State<LoginPage> {
       } else {
         _showAlertDialog(context, response.error?.message ?? "Error");
       }
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.white,
+          content: Center(
+              child:
+                  Text("Username and Password required!", style: TextStyle(color: Colors.black)))));
     }
   }
 
@@ -113,6 +120,9 @@ class _MyLoginPageState extends State<LoginPage> {
                               width: 320,
                               child: Column(children: [
                                 TextField(
+                                  inputFormatters: [
+                                    LengthLimitingTextInputFormatter(16)
+                                  ],
                                   textInputAction: TextInputAction.done,
                                   onEditingComplete: () {
                                     FocusScope.of(context).nextFocus();
@@ -135,6 +145,9 @@ class _MyLoginPageState extends State<LoginPage> {
                                 SizedBox(height: 10),
                                 TextField(
                                   textInputAction: TextInputAction.done,
+                                  inputFormatters: [
+                                    LengthLimitingTextInputFormatter(20)
+                                  ],
                                   onEditingComplete: () {
                                     doUserLogin(usernameController.text.trim(),
                                         passwordController.text.trim());
@@ -277,6 +290,12 @@ class _RegisterPageState extends State<RegisterPage> {
       } else {
         _showAlertDialog(context, response.error?.message ?? "Error");
       }
+    }else{
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.white,
+          content: Center(
+              child:
+                  Text("Username, Password and Mail required!", style: TextStyle(color: Colors.black)))));
     }
   }
 
@@ -284,6 +303,9 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+        ),
         extendBody: true,
         body: Row(
           children: [
@@ -325,6 +347,9 @@ class _RegisterPageState extends State<RegisterPage> {
                               width: 320,
                               child: Column(children: [
                                 TextField(
+                                  inputFormatters: [
+                                    LengthLimitingTextInputFormatter(16)
+                                  ],
                                   textInputAction: TextInputAction.done,
                                   onEditingComplete: () {
                                     FocusScope.of(context).nextFocus();
@@ -346,6 +371,9 @@ class _RegisterPageState extends State<RegisterPage> {
                                 ),
                                 SizedBox(height: 10),
                                 TextField(
+                                  inputFormatters: [
+                                    LengthLimitingTextInputFormatter(20)
+                                  ],
                                   textInputAction: TextInputAction.done,
                                   onEditingComplete: () {
                                     FocusScope.of(context).nextFocus();
@@ -370,6 +398,9 @@ class _RegisterPageState extends State<RegisterPage> {
                                 ),
                                 SizedBox(height: 10),
                                 TextField(
+                                  inputFormatters: [
+                                    LengthLimitingTextInputFormatter(30)
+                                  ],
                                   textInputAction: TextInputAction.done,
                                   onSubmitted: (value) {
                                     doUserRegistration(
@@ -475,6 +506,12 @@ class _forgotPageState extends State<forgotPage> {
       } else {
         _showAlertDialog(context, response.error?.message ?? "Error", "Error");
       }
+    }else{
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.white,
+          content: Center(
+              child:
+                  Text("Mail required!", style: TextStyle(color: Colors.black)))));
     }
   }
 
@@ -482,6 +519,9 @@ class _forgotPageState extends State<forgotPage> {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+        ),
         extendBody: true,
         body: Row(
           children: [
@@ -523,6 +563,9 @@ class _forgotPageState extends State<forgotPage> {
                               width: 320,
                               child: Column(children: [
                                 TextField(
+                                  inputFormatters: [
+                                    LengthLimitingTextInputFormatter(30)
+                                  ],
                                   textInputAction: TextInputAction.done,
                                   onEditingComplete: () {
                                     doReset(mailController.text.trim());

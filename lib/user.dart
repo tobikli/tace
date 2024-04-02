@@ -12,6 +12,7 @@ class _UserPageState extends State<UserPage> {
   var mail = "";
   var verified = false;
   var createdString = "";
+  var pressed = false;
 
   void loadUser() async {
     ParseUser? currentUser = await ParseUser.currentUser() as ParseUser?;
@@ -71,6 +72,16 @@ class _UserPageState extends State<UserPage> {
                   ],
                 )),
               ),
+              SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: (verified || pressed) ? null : (){
+                  pressed = true;
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor: Colors.white, content: Center(child: Text("Coming soon", style: TextStyle(color: Colors.black)))));
+                  setState(() {
+                    
+                  });
+                }, 
+                child: Text("Verify Mail")),
             ]),
           ),
         ),

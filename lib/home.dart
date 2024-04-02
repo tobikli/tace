@@ -1,8 +1,43 @@
 import 'package:flutter/material.dart';
 import 'appState.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
+import 'globals.dart';
+import 'package:restart_app/restart_app.dart';
 
-class HomePage extends StatelessWidget {
+
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+
+  void checkVersion() async{
+    final resp = await ParseObject('AppInfo').getObject('nVMy3lp4IL');
+    print(resp);
+    if(resp.success){
+      final obje = resp.result;
+      var serVer = await obje.get('version');
+      print(serVer);
+      if(serVer != globals().version){
+        globals().showAlertDialog(context, "App ist outdated!\nPlease update", "Update");
+      }
+    }
+
+    setState(() {
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      checkVersion();
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
