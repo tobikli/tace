@@ -35,7 +35,7 @@ Go to the project directory
 Build project
 
 ```bash
-  flutter run {ios, android, macos, windows, web} --release
+  flutter build {ios, android, macos, windows, web}
 ```
 
 ## Authors
