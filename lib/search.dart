@@ -18,13 +18,8 @@ class SearchPage extends StatelessWidget {
                   'Search',
                   style: style1)),
         ),
-        Expanded(
-          child: ListView(
-            children: [
-              Text('test'),
-            ],
-          ),
-        ),
+        SizedBox(height: 50),
+        Text("Coming Soon")
       ],
     );
   }

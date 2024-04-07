@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 import 'package:tace/login.dart';
 import 'package:tace/models/nav_item_model.dart';
-import 'home.dart';
+import 'home/home.dart';
 import 'user.dart';
 import 'favorites.dart';
 import 'search.dart';
-import 'appState.dart';
+import 'appstate.dart';
 import 'settings.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 
@@ -147,12 +147,12 @@ class _MyHomePageState extends State<MyHomePage> {
             margin: EdgeInsets.symmetric(horizontal: 24),
             decoration: BoxDecoration(
                 color: bottomNavBgColor.withOpacity(0.8),
-                borderRadius: BorderRadius.all(Radius.circular(24)),
+                borderRadius: BorderRadius.all(Radius.circular(20)),
                 boxShadow: [
                   BoxShadow(
                     color: bottomNavBgColor.withOpacity(0.3),
-                    //offset: Offset(0, 20),
-                    //blurRadius: 20
+                    offset: Offset(0, 20),
+                    blurRadius: 20
                   ),
                 ]),
             child: Row(

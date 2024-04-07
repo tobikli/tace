@@ -12,7 +12,7 @@ class _UserPageState extends State<UserPage> {
   var mail = "";
   var verified = false;
   var createdString = "";
-  var pressed = false;
+  var pressed = true;
 
   void loadUser() async {
     ParseUser? currentUser = await ParseUser.currentUser() as ParseUser?;

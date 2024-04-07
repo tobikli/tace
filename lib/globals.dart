@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-class globals{
-  
-  var version = "0.0.2";
+class Globals {
+  var version = "0.0.3";
 
-
+  var favorites = [];
 
   void showAlertDialog(BuildContext context, String msg, String title) {
     showCupertinoModalPopup<void>(
@@ -25,7 +23,6 @@ class globals{
       ),
     );
   }
-
 }
 
 /*

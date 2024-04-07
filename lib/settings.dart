@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:tace/login.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
-import 'appState.dart';
+import 'appstate.dart';
 import 'package:flutter/material.dart';
 import 'globals.dart';
 
@@ -12,7 +12,7 @@ class SettingsPage extends StatelessWidget {
     final style1 = theme.textTheme.headlineSmall!.copyWith(
       color: theme.colorScheme.onPrimary,
     );
-    final version = globals().version;
+    final version = Globals().version;
 
     return Theme(
       data: theme,
@@ -79,7 +79,8 @@ void _showAlertDialog(BuildContext context) {
               ParseUser? currentUser = await ParseUser.currentUser() as ParseUser?;
               await currentUser?.logout();
               SharedPreferencesHelper.instance.prefs.remove("name");
-              Navigator.pushReplacement(context, 
+                if (!context.mounted) return;
+              Navigator.pushReplacement(context,
                       MaterialPageRoute(builder: (context) => LoginPage()));
             },
             child: const Text('Yes'),

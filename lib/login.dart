@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tace/home.dart';
+import 'package:tace/home/home.dart';
 import 'package:tace/main.dart';
-import 'appState.dart';
+import 'appstate.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -50,9 +50,12 @@ class _MyLoginPageState extends State<LoginPage> {
       if (response.success) {
         SharedPreferencesHelper.instance.prefs
             .setString("name", usernameController.text);
+            if (!mounted) return;
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => MyHomePage()));
+        SharedPreferencesHelper.instance.doInit();
       } else {
+        if (!mounted) return;
         _showAlertDialog(context, response.error?.message ?? "Error");
       }
     } else {
@@ -222,7 +225,7 @@ class _MyLoginPageState extends State<LoginPage> {
                             ),
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => forgotPage()));
+                                  builder: (context) => ForgotPage()));
                             },
                             child: Text("Reset Password",
                                 style: TextStyle(
@@ -285,9 +288,14 @@ class _RegisterPageState extends State<RegisterPage> {
       var response = await user.signUp();
       if (response.success) {
         SharedPreferencesHelper.instance.prefs.setString("name", name);
+        if (!mounted) return;
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => MyHomePage()));
+        final todo = ParseObject('UserFavorites')..set('UserID', name)..set('favs', []);
+       await todo.save();
+       SharedPreferencesHelper.instance.doInit();
       } else {
+        if (!mounted) return;
         _showAlertDialog(context, response.error?.message ?? "Error");
       }
     }else{
@@ -461,12 +469,12 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 }
 
-class forgotPage extends StatefulWidget {
+class ForgotPage extends StatefulWidget {
   @override
-  State<forgotPage> createState() => _forgotPageState();
+  State<ForgotPage> createState() => _ForgotPageState();
 }
 
-class _forgotPageState extends State<forgotPage> {
+class _ForgotPageState extends State<ForgotPage> {
   final mailController = TextEditingController();
 
   @override
@@ -500,10 +508,13 @@ class _forgotPageState extends State<forgotPage> {
       var response = await user.requestPasswordReset();
       print(response.success);
       if (response.success) {
+        if (!mounted) return;
         Navigator.of(context).pop();
+        
         _showAlertDialog(context,
             "Password reset instructions have been sent to email!", "Success");
       } else {
+        if (!mounted) return;
         _showAlertDialog(context, response.error?.message ?? "Error", "Error");
       }
     }else{
