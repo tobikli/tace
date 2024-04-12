@@ -98,61 +98,64 @@ class _HomePageState extends State<HomePage> {
               shaderCallback: (Rect bounds) {
                 return LinearGradient(
                   colors: [Colors.white, Colors.transparent],
-                  stops: ending != true ? [0.95, 1] : [1, 1],
+                  stops: ending != true ? [1, 1] : [1, 1],
                   tileMode: TileMode.mirror,
                 ).createShader(bounds);
               },
-              child: SizedBox(
-                height: 30,
-                child: ListView(
-                  controller: _scrollController,
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    TopButton(
-                        index: 0,
-                        selectedIndex: selectedIndex,
-                        fun: () {
-                          selectedIndex = 0;
-                          setState(() {});
-                        },
-                        text: "Home"),
-                    SizedBox(width: 8),
-                    TopButton(
-                        index: 1,
-                        selectedIndex: selectedIndex,
-                        fun: () {
-                          selectedIndex = 1;
-                          setState(() {});
-                        },
-                        text: "Trending"),
-                    SizedBox(width: 8),
-                    TopButton(
-                        index: 2,
-                        selectedIndex: selectedIndex,
-                        fun: () {
-                          selectedIndex = 2;
-                          setState(() {});
-                        },
-                        text: "For you"),
-                    SizedBox(width: 8),
-                    TopButton(
-                        index: 3,
-                        selectedIndex: selectedIndex,
-                        fun: () {
-                          selectedIndex = 3;
-                          setState(() {});
-                        },
-                        text: "Special"),
-                    SizedBox(width: 8),
-                    TopButton(
-                        index: 4,
-                        selectedIndex: selectedIndex,
-                        fun: () {
-                          selectedIndex = 4;
-                          setState(() {});
-                        },
-                        text: "Recent"),
-                  ],
+              child: Align(
+                alignment: Alignment.center,
+                child: SizedBox(
+                  height: 30,
+                  child: ListView(
+                    controller: _scrollController,
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      TopButton(
+                          index: 0,
+                          selectedIndex: selectedIndex,
+                          fun: () {
+                            selectedIndex = 0;
+                            setState(() {});
+                          },
+                          text: "Home"),
+                      SizedBox(width: 8),
+                      TopButton(
+                          index: 1,
+                          selectedIndex: selectedIndex,
+                          fun: () {
+                            selectedIndex = 1;
+                            setState(() {});
+                          },
+                          text: "Trending"),
+                      SizedBox(width: 8),
+                      TopButton(
+                          index: 2,
+                          selectedIndex: selectedIndex,
+                          fun: () {
+                            selectedIndex = 2;
+                            setState(() {});
+                          },
+                          text: "For you"),
+                      SizedBox(width: 8),
+                      TopButton(
+                          index: 3,
+                          selectedIndex: selectedIndex,
+                          fun: () {
+                            selectedIndex = 3;
+                            setState(() {});
+                          },
+                          text: "Special"),
+                      SizedBox(width: 8),
+                      TopButton(
+                          index: 4,
+                          selectedIndex: selectedIndex,
+                          fun: () {
+                            selectedIndex = 4;
+                            setState(() {});
+                          },
+                          text: "Recent"),
+                    ],
+                  ),
                 ),
               ),
             ),

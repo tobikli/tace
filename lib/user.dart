@@ -10,9 +10,9 @@ class UserPage extends StatefulWidget {
 class _UserPageState extends State<UserPage> {
   var usrname = "";
   var mail = "";
-  var verified = false;
+  var verified = true;
   var createdString = "";
-  var pressed = true;
+  var pressed = false;
 
   void loadUser() async {
     ParseUser? currentUser = await ParseUser.currentUser() as ParseUser?;

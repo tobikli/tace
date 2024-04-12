@@ -50,5 +50,6 @@ flutter:
         - asset: assets/fonts/Demode.ttf
   assets:
     - assets/animated-icons.riv
+    - assets/icon.png
 
 

@@ -47,11 +47,8 @@ class _FavoritesPageState extends State<FavoritesPage> {
           SizedBox(
             height: 10,
           ),
-          Divider(
-            color: theme.colorScheme.secondary,
-            indent: 15,
-            endIndent: 15,
-          ),
+          
+          
           SizedBox(
             height: 20,
           ),
