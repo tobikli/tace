@@ -19,8 +19,8 @@ List<NavItemModel> bottomNavItems = [
     title: "Favo", 
     rive: RiveModel(
       src: "assets/animated-icons.riv",
-      artboard: "LIKE/STAR",
-      stateMachineName: "STAR_Interactivity"),
+      artboard: "CHAT",
+      stateMachineName: "CHAT_Interactivity"),
     ),
     NavItemModel(
     title: "Search", 

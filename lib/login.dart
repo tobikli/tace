@@ -28,7 +28,7 @@ class _MyLoginPageState extends State<LoginPage> {
     showCupertinoModalPopup<void>(
       context: context,
       builder: (BuildContext context) => CupertinoAlertDialog(
-        title: const Text('Error'),
+        title: const Text('Error', style: TextStyle(color: Colors.black)),
         content: Text(msg),
         actions: <CupertinoDialogAction>[
           CupertinoDialogAction(
@@ -36,7 +36,7 @@ class _MyLoginPageState extends State<LoginPage> {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Text('Ok'),
+            child: const Text('Ok', style: TextStyle(color: Colors.black)),
           ),
         ],
       ),
@@ -267,7 +267,7 @@ class _RegisterPageState extends State<RegisterPage> {
     showCupertinoModalPopup<void>(
       context: context,
       builder: (BuildContext context) => CupertinoAlertDialog(
-        title: const Text('Error'),
+        title: const Text('Error', style: TextStyle(color: Colors.black)),
         content: Text(msg),
         actions: <CupertinoDialogAction>[
           CupertinoDialogAction(
@@ -275,7 +275,7 @@ class _RegisterPageState extends State<RegisterPage> {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Text('Ok'),
+            child: const Text('Ok', style: TextStyle(color: Colors.black)),
           ),
         ],
       ),
@@ -495,7 +495,7 @@ class _ForgotPageState extends State<ForgotPage> {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Text('Ok'),
+            child: const Text('Ok', style: TextStyle(color: Colors.black)),
           ),
         ],
       ),

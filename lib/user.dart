@@ -20,8 +20,10 @@ class _UserPageState extends State<UserPage> {
     mail = currentUser?.emailAddress ?? "";
     verified = currentUser?.emailVerified ?? false;
     var dtCreated = currentUser?.createdAt ?? DateTime(1);
+    print(dtCreated);
     DateFormat formatter = DateFormat('dd.mm.yyyy');
     createdString = formatter.format(dtCreated);
+    createdString = dtCreated.toString().substring(0, 10);
     setState(() {});
   }
 

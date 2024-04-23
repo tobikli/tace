@@ -35,15 +35,15 @@ class MyApp extends StatelessWidget {
           elevatedButtonTheme: ElevatedButtonThemeData(style: ButtonStyle()),
           useMaterial3: true,
           colorScheme: ColorScheme(
-            brightness: Brightness.dark,
+            brightness: Brightness.light,
             primary: Colors.white,
             onPrimary: Colors.black,
             secondary: Colors.black,
-            onSecondary: Colors.black,
+            onSecondary: Colors.white,
             error: Colors.red,
             onError: Colors.black,
             background: Colors.white,
-            onBackground: Colors.black,
+            onBackground: Colors.white,
             surface: Colors.black,
             onSurface: Colors.black,
           ),
@@ -144,10 +144,10 @@ class _MyHomePageState extends State<MyHomePage> {
         bottomNavigationBar: SafeArea(
           child: Container(
             padding: EdgeInsets.all(12),
-            margin: EdgeInsets.symmetric(horizontal: 24),
+            margin: EdgeInsets.symmetric(horizontal: 0),
             decoration: BoxDecoration(
-                color: bottomNavBgColor.withOpacity(0.8),
-                borderRadius: BorderRadius.all(Radius.circular(20)),
+                color: bottomNavBgColor.withOpacity(1.0),
+                borderRadius: BorderRadius.all(Radius.circular(0)),
                 boxShadow: [
                   BoxShadow(
                     color: bottomNavBgColor.withOpacity(0.3),

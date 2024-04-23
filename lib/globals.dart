@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Globals {
-  var version = "0.0.3";
+  var version = "0.0.31";
 
   var favorites = [];
 
@@ -17,7 +18,7 @@ class Globals {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Text('Ok'),
+            child: const Text('Ok', style: TextStyle(color: Colors.black),),
           ),
         ],
       ),

@@ -72,7 +72,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    var usrname = SharedPreferencesHelper.instance.prefs.getString('name');
 
     return SafeArea(
       child: Column(
@@ -88,10 +87,6 @@ class _HomePageState extends State<HomePage> {
             indent: 15,
             endIndent: 15,
           ),
-          SizedBox(height: 10),
-          Text("Welcome back $usrname!",
-              style:
-                  TextStyle(color: theme.colorScheme.secondary, fontSize: 20)),
           Padding(
             padding: const EdgeInsets.all(15.0),
             child: ShaderMask(

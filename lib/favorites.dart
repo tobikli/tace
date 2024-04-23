@@ -43,7 +43,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
     return SafeArea(
       child: Column(
         children: [
-          Text('Favorites', style: style1),
+          Text('Notes', style: style1),
           SizedBox(
             height: 10,
           ),
