@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tace/appstate.dart';
 import 'package:flutter/services.dart';
 
 class SearchPage extends StatefulWidget {
@@ -46,6 +45,7 @@ class _SearchPageState extends State<SearchPage> {
                   query = searchControlller.text.trim();
                   searchControlller.clear();
                   setState(() {});
+                  FocusScope.of(context).unfocus();
                 },
                 cursorColor: Colors.black,
                 textAlign: TextAlign.center,

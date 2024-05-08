@@ -4,7 +4,6 @@ import 'package:tace/home/homepage.dart';
 import 'package:tace/home/recent.dart';
 import 'package:tace/home/special.dart';
 import 'package:tace/home/trending.dart';
-import '../appstate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 import '../globals.dart';
@@ -27,7 +26,6 @@ class _HomePageState extends State<HomePage> {
             context, "App ist outdated!\nPlease update", "Update");
       }
     }
-
   }
 
   @override
@@ -43,7 +41,6 @@ class _HomePageState extends State<HomePage> {
 
   ScrollController _scrollController = ScrollController();
 
-  // Parameter to be changed when scrolled to the end
   bool ending = false;
 
   @override
@@ -57,13 +54,11 @@ class _HomePageState extends State<HomePage> {
     if (_scrollController.position.pixels ==
         _scrollController.position.maxScrollExtent) {
       setState(() {
-        // When scrolled to the end, change the parameter to true
         ending = true;
         print(ending);
       });
     } else {
       setState(() {
-        // When scrolled away from the end, reset the parameter to false
         ending = false;
       });
     }
